@@ -12,5 +12,10 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
   },
+  resolve: {
+    alias: {
+      "@hooks": resolve(__dirname, "src/hooks"),
+    },
+  },
   plugins: [react(), dts({ rollupTypes: true })],
 });

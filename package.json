@@ -1,5 +1,5 @@
 {
-  "name": "@inubekit/your-component-name",
+  "name": "@inubekit/hooks",
   "homepage": "https://inubeds.vercel.app/",
   "author": "inube",
   "main": "dist/index.es.js",
@@ -18,7 +18,8 @@
     }
   },
   "files": [
-    "dist/index.es.js"
+    "dist/index.es.js",
+    "dist/index.d.ts"
   ],
   "scripts": {
     "dev": "vite",
@@ -45,7 +46,6 @@
     "@storybook/addon-essentials": "^7.6.7",
     "@storybook/addon-interactions": "^7.6.7",
     "@storybook/addon-links": "^7.6.7",
-    "@storybook/addon-onboarding": "^1.0.10",
     "@storybook/blocks": "^7.6.7",
     "@storybook/react": "^7.6.7",
     "@storybook/react-vite": "^7.6.7",
