@@ -19,7 +19,7 @@
   },
   "files": [
     "dist/index.es.js",
-    "dist/index.d.ts"
+    "dist/index.es.d.ts"
   ],
   "scripts": {
     "dev": "vite",
