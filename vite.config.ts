@@ -11,6 +11,14 @@ export default defineConfig({
       formats: ["es"],
       fileName: (format) => `index.${format}.js`,
     },
+    rollupOptions: {
+      external: ["react", "styled-components"],
+      output: {
+        globals: {
+          react: "React",
+        },
+      },
+    },
   },
   resolve: {
     alias: {

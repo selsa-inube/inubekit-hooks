@@ -1,3 +1,20 @@
+# v1.0.1 (Fri Feb 02 2024)
+
+#### 🐛 Bug Fix
+
+- post @inube hooks package [#2](https://github.com/selsa-inube/inubekit-hooks/pull/2) ([@Andresbl123](https://github.com/Andresbl123))
+
+#### ⚠️ Pushed to `main`
+
+- feat(package.json): update to include dist/index.es.d.ts (carlos3k11@gmail.com)
+
+#### Authors: 2
+
+- Andres ([@Andresbl123](https://github.com/Andresbl123))
+- Andres Babativa (carlos3k11@gmail.com)
+
+---
+
 # v0.0.2 (Tue Jan 30 2024)
 
 #### 🐛 Bug Fix
