@@ -1,3 +1,21 @@
+# v1.1.1 (Fri Apr 05 2024)
+
+#### 🐛 Bug Fix
+
+- Add auto publish [#5](https://github.com/selsa-inube/inubekit-hooks/pull/5) ([@cmarin001](https://github.com/cmarin001))
+- implement `TypeScript` support in @inubekit hooks [#3](https://github.com/selsa-inube/inubekit-hooks/pull/3) ([@Andresbl123](https://github.com/Andresbl123))
+
+#### 🔩 Dependency Updates
+
+- Update inubekit/hooks to storybook v8 [#4](https://github.com/selsa-inube/inubekit-hooks/pull/4) ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 2
+
+- Andres ([@Andresbl123](https://github.com/Andresbl123))
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v1.0.1 (Fri Feb 02 2024)
 
 #### 🐛 Bug Fix
