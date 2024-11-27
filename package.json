@@ -5,8 +5,7 @@
   "main": "dist/index.es.js",
   "keywords": [
     "inube",
-    "design-system",
-    "react"
+    "design system"
   ],
   "description": "",
   "private": false,
@@ -28,21 +27,11 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install",
-    "auto": "auto",
-    "changelog": "npm run auto changelog",
-    "version": "rm -rf dist && npm run build",
-    "release": "git push --follow-tags && npm run auto release",
-    "autorelease": "auto shipit"
+    "prepare": "husky install"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.1.8"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.4",
@@ -60,7 +49,6 @@
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "auto": "^11.0.4",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -75,14 +63,5 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/selsa-inube/inubekit-hooks.git"
-  },
-  "auto": {
-    "plugins": [
-      "npm"
-    ]
   }
 }

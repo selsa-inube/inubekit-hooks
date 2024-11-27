@@ -3,3 +3,6 @@
 
 npm run lint
 npx lint-staged
+
+rm -rf /dist
+npm run build
