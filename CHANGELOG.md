@@ -1,3 +1,10 @@
+# v1.2.1 (Fri Nov 29 2024)
+
+This release improves the basic documentation of the library in README.md
+
+- chore: remove styled-components from exterrnal dependencies in rollup build config
+- docs: update readme
+
 # v1.2.0 (Tue Apr 30 2024)
 
 #### 🚀 Enhancement
