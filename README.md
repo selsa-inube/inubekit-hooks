@@ -1,34 +1,39 @@
-# IDS - Starter
+# Hooks
 
-This project is a starter repository that can be used to develop and publish new Inube Design System components. With this repository the intention is that any design-system team member can start to develop a new component without starting from scratch.
+This library serves as entrypoint to access all React custom hooks provided by inubekit.
 
-## Readme
+## Installation
 
-This readme contains the details of usage of the starter. Once you create a new repo based in this template in github, please change the content of the README and make it relatable to the component you are creating.
+```bash
+npm install @inubekit/hooks
+```
 
-## Instructions of usage
+## Hooks
 
-### Package.json
+### useFonts
 
-1. **name**: As you can see in the package.json file, the name of this package is "ids-starter". Please rename the name when you start your new project. Remember that all components are publish by the @inubekit organization in npm, so rename the package as @inubekit/{new-component-name}
-2. **description**: Complete the description about the component you are creating.
+This hooks is useful for loading and setting a font-faces in an application during runtime. To make it work, this hook has to make use of the browser FontFace API.
 
-### Environment variables
+If you want to know all the little details about how to use this hook and how to connect it with a fonts provider like Google Fonts check this [article](https://medium.com/@wfercanas/load-fonts-on-demand-with-react-206ce12174c0).
 
-1. In order to control releases and package publishing, you will need to have a .env file with some environment variables.
-2. `GH_TOKEN`: Create this token in github.com, using your profile settings. This token requires the **repo** scope.
-3. `NPM_TOKEN`: Create this token in npmjs.com. You must ask the admin to add you as a organization admin prior to publish the package in npm.
+### useMediaQuery
 
-### Pull Requests
+This hook helps you control the responsiveness of your application by reacting to changes in the viewport. The usage of events in the browser and its corresponding handler function allows apps to change the rendering of the application.
 
-1. All PRs must have a semver label attached to it. This is the way the publishing and versioning process will use to know if a PR demands a major, minor or patch version to be created.
-2. To have these labels available, please run `npm run auto create-labels` to create them (you need to have already your `GH_TOKEN` in .env in order to make this command work).
+There are some key factors that makes this hook work:
 
-### Publishing
+1. `matchMedia()` is a method that belongs to the `window` object in browsers. It receives a media query string as a parameter and returns a `MediaQueryList` object. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) docs.
+2. `MediaQueryList`: is an object created and returned by `matchMedia()` which lets you know if the query you passed matches the viewport (`boolean`). That answer is obtained by calling the `matches()` method of the object.
+3. The `MediaQueryList` object also lets you add event listeners of type "change" to it, so the browser lets you know when the `matches()` value changes.
+4. With the event listener in place, the hook can then update the hook state. With that update, you can control the layout of your screens.
+5. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList) docs for details about `MediaQueryList`.
 
-Follow these steps to publish and release a new version of your package. Also check that you're an admin in the repository (validate with your team leader).
+#### useMediaQueries
 
-1. `npm run changelog`: this command will create a changelog for you, including in the document the changes that the current release will publish in the new version of the package and what should be the version number of the release. The number is calculated using the labels of all the PRs that are included in this new version (see the Pull Requests details above).
-2. `npm version <new-version>`: this command makes multiple things. First, deletes the /dist folder in your project. Second, executes the build of the project and its files are stored in a new /dist folder. Third, creates a new version using the version number you pass in the command (use the version calculated in the changelog step). Fourth, executes a git push with the new version tag included. Fifth, creates a new release in Github. **This step requires that you have your `GH_TOKEN` working**.
-3. `npm login`: you must be logged in with npm to continue the process.
-4. `npm publish`: with the new build already in /dist, you can now execute this command and the new package version will be published in npm. **This command requires tat you have you `NPM_TOKEN` working.**
+The difference between this hook and the [useMediaQuery](#usemediaquery) hook is that instead of passing just one media query string for a single breakpoint, you can pass an array of media queries (`[]string`). Internally the hook:
+
+1. Creates a `MediaQueryList` object per media query.
+2. Adds an "onchage" event listener to each `MediaQueryList` object to control monitor the change of each breakpoint.
+3. Instead of returning a single boolean, returns an object whose keys are the media queries passed and whose values are booleans.
+
+A proper usage demands that the ranges you pass as media queries (breakpoints) are not overlapping. That will let you know exactly the range the viewport is currently working on and thus you can handle the rendering of the app.
